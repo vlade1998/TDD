@@ -9,11 +9,11 @@ export class Money {
     }
 
     static dollar (amount: number): Money {
-      return new Dollar(amount, 'USD')
+      return new Money(amount, 'USD')
     }
 
     static euro (amount: number): Money {
-      return new Euro(amount, 'EUR')
+      return new Money(amount, 'EUR')
     }
 
     equals (other: Money): boolean {
@@ -30,12 +30,4 @@ export class Money {
     currency (): string {
       return this._currency
     }
-}
-
-export class Dollar extends Money {
-
-}
-
-export class Euro extends Money {
-
 }
