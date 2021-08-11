@@ -1,5 +1,6 @@
+import { Expression } from './expression'
 
-export class Money {
+export class Money implements Expression {
     private readonly amount:number
     private readonly _currency: string
 
@@ -25,6 +26,10 @@ export class Money {
 
     times (multiplier: number): Money {
       return new Money(this.amount * multiplier, this._currency)
+    }
+
+    plus (addend: Money): Expression {
+      return new Money(this.amount + addend.amount, this._currency)
     }
 
     currency (): string {
